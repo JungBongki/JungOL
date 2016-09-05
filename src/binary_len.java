@@ -9,10 +9,10 @@ public class binary_len {
 
       Scanner sc = new Scanner(System.in);
       List<Integer> arr = new ArrayList<Integer>();
-      sc.close();
       
       int N = sc.nextInt();
       int N_D;
+      sc.close();
       /*
       String strN = Integer.toBinaryString(N);
       System.out.println(N); // 이진수 형태의 String으로 반환된다...!
