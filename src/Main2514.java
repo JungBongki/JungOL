@@ -1,4 +1,4 @@
-package 실력다지기;
+
 
 import java.util.Scanner;
 
