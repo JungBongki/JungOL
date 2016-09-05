@@ -1,5 +1,3 @@
-package 실력다지기;
-
 import java.util.Scanner;
 
 public class Main2514 {
@@ -10,7 +8,6 @@ public class Main2514 {
 		
 		int KOI_Count = 0;
 		int IOI_Count = 0;
-		// IOIOI : 0개 2개
 		for(int i = 3; i <= input.length(); i++){
 			String split_input = input.substring(i-3, i);
 			if(split_input.equals("IOI"))
