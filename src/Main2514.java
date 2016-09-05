@@ -10,7 +10,7 @@ public class Main2514 {
 		
 		int KOI_Count = 0;
 		int IOI_Count = 0;
-		// IOIOI : 0°³ 2°³
+		// IOIOI : 0ï¿½ï¿½ 2ï¿½ï¿½
 		for(int i = 3; i <= input.length(); i++){
 			String split_input = input.substring(i-3, i);
 			if(split_input.equals("IOI"))
