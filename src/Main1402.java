@@ -1,21 +1,24 @@
+/** ë‚ ì§œ 160901
+ *  ì œëª© : ì•½ìˆ˜êµ¬í•˜ê¸° 
+ */
 import java.util.Scanner;
 
 public class Main1402 {
 	public static void main(String[] arg){
 		Scanner sc = new Scanner(System.in);
 		
-		int yak = sc.nextInt(); // ¾à¼ö±¸ÇÒ°Å
-		int min = sc.nextInt(); // min¹øÂ° °ª ÃßÃâ
+		int yak = sc.nextInt(); 
+		int min = sc.nextInt(); 
 		
 		int[] arr = new int[yak];
 		for(int i=0; i<arr.length; i++){
-			arr[i] = 0; // 0À¸·Î ÃÊ±âÈ­
+			arr[i] = 0; 
 		}
 		int result = 0;
-		int count = 1; // Ã¹¹øÂ°±âÁØ
+		int count = 1; 
 		for(int i=yak; i>0; i--){
-			if(yak % i == 0){ // ¾à¼öÀÏ °æ¿ì
-				arr[i-1] = yak / i;  // 6±âÁØ arr[0] = 1, arr[1] = 3, arr[2] = 2, arr[5] = 1
+			if(yak % i == 0){ // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+				arr[i-1] = yak / i;  // 6ï¿½ï¿½ï¿½ï¿½ arr[0] = 1, arr[1] = 3, arr[2] = 2, arr[5] = 1
 				if(count==min){
 					result = arr[i-1];
 				}
