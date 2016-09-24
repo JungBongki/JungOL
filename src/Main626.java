@@ -1,21 +1,43 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
+import java.io.InputStreamReader;
 /**
- * 626 : ÆÄÀÏÀÔÃâ·Â - ÀÚ°¡Áø´Ü1 
-
-Á¦ÇÑ½Ã°£: 1000 ms    ¸Ş¸ğ¸®Á¦ÇÑ: 0 MB
-ÇØ°áÈ½¼ö: 538 È¸    ½ÃµµÈ½¼ö: 1082 È¸    
-µÎ °³ÀÇ Á¤¼ö¸¦ ÀÔ·Â¹Ş¾Æ ÀÛÀº ¼öºÎÅÍ Å« ¼ö±îÁö ¸ğµç Á¤¼öÀÇ ÇÕÀ» ±¸ÇÏ¿© Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-* Ç¥ÁØÀÔÃâ·Â¹æ½ÄÀ¸·Î ÀÛ¼ºÇÏ¼¼¿ä.
+ * ë‚ ì§œ : 160919
+ * ì‘ì„±ì : ì •ë´‰ê¸°
+ * ì œëª© : íŒŒì¼ì…ì¶œë ¥ ê¸°ë³¸ë‹¤ì§€ê¸° - ë‘ìˆ˜ ì‚¬ì´ì— ìˆëŠ” ì •ìˆ˜ ëª¨ë‘ ë”í•˜ê¸° (ë¶ˆëŸ¬ì™€ì„œ)
  */
-
 public class Main626 {
 	public static void main(String[] args) {
-		File file = new File("626.txt");
 		
+		//File file = new File("626.txt");
+		try {
+			//FileReader fileReader = new FileReader(file);
+			BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+			//BufferedReader br = new BufferedReader(fileReader);
+			
+			String[] input = br2.readLine().split(" ");
+			int min = Integer.parseInt(input[0]);
+			int max = Integer.parseInt(input[1]);
+			int result = 0;
+			for(int i=min; i<=max; i++){
+				result += i;
+			}
+			System.out.println(result);
+			br2.close();
+			//fileReader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO ìë™ ìƒì„±ëœ catch ë¸”ë¡
+			e.printStackTrace();
+		}
+	}
+}
+
+/*		
 		try {
 			FileReader fileReader = new FileReader(file);
 			int c;
@@ -24,7 +46,7 @@ public class Main626 {
 				if(c==-1){
 					break;
 				}
-				System.out.println(String.valueOf((char)c));
+				System.out.println(c);
 			}
 			fileReader.close();
 		} catch (FileNotFoundException e) {
@@ -32,7 +54,4 @@ public class Main626 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
-	}
-}
+ */		
