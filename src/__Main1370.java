@@ -4,11 +4,12 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 /**
+ * @since 2016.12.09
  * @name 회의실배정
  * @author Bongki
  * @requirement 최대한 많은 회의실을 배정하라.
  */
-public class Main1370 {
+public class __Main1370 {
 
 	public static void main(String[] args) {
 		
