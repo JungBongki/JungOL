@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -22,85 +23,55 @@ public class __Main1669 {
 		}
 		sc.close();
 		
-		Arrays.sort(ssg, new Comparator<int[]>() {
+		int[] height_best = sort_arr(ssg, 1);
+		
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		for(int i=0; i<height_best.length;i++){
+			arr.add(height_best[i]); // 4 1 5 9 2
+		}
+		HashMap<Integer, Integer> hash = new HashMap<Integer, Integer>();
+		for(int i=0; i<arr.size(); i++){
+			hash.put(i, arr.get(i));
+		}
+		
+		
+		int temp = arr.get(0);
+		for(int i=1; i<arr.size(); i++){
+			if(arr.get(i) >= temp){
+				System.out.println(temp + " 지워짐");
+				arr.remove(arr.indexOf(temp));
+				i--;
+				temp = arr.get(i);
+			}
+			System.out.println(arr.toString());
+		}
+		
+		
+		System.out.println(arr.toString());
+	}
 
+	private static int[] sort_arr(int[][] ssg, int code) {
+		final int num = code;
+		
+		Arrays.sort(ssg, new Comparator<int[]>() {
 			@Override
 			public int compare(int[] o1, int[] o2) {
-				if(o1[1] >= o2[1]){
+				if(o1[num] >= o2[num]){
 					return 1;
 				}
 				return -1;
 			}
 		});
-		/*for(int i=0; i<n; i++){
-			System.out.println(Arrays.toString(ssg[i]));
-		}*/
-		Map<Integer, Integer> al = new HashMap<Integer, Integer>();
-
-		for (int i = 0; i < ssg.length; i++) {
-			al.put(i, ssg[i][2]);
+		if(code == 2){
+			code = 1;
+		} else if(code==1) {
+			code = 2;
 		}
-		
-		solution(ssg);
-	}
-
-	private static void solution(int[][] ssg) {
-		/*
-		int count = 0;
-		boolean flag = true;
-		do {
-			int temp = 0;
-			for (int i = 0; i < ssg.length; i++) {
-				if (al.get(i) != null) {
-					if (temp <= al.get(i)) {
-						temp = al.get(i);
-						al.remove(i);
-					} else {
-						continue;
-					}
-				}
-			}
-
-			//System.out.println(al.toString());
-			count++;
-			if (al.isEmpty()) {
-				flag = false;
-			}
-		} while (flag);
-
-		System.out.println(count);
-		*/
+		int[] result = new int[ssg.length];
+		for(int i=0; i<ssg.length; i++){
+			result[i] = ssg[i][code];
+		}
+		return result;
 	}
 }
-/*
-	ArrayList<Integer> inner_arr = new ArrayList<Integer>();
-	
-	int temp = ssg[0][2]; // startpoint
-	inner_arr.add(temp);
-	int chk = 0; // savepoint
-	int sign = 0; // 신호등
-	int count = 1;
-	do {
-		sign = 0;
-		for (int i = 1; i <= ssg.length; i++) {
-			if (temp <= ssg[i-1][2]) {
-				if(!inner_arr.contains(ssg[i-1][2])){
-					temp = ssg[i-1][2];
-					inner_arr.add(ssg[i-1][2]);
-					System.out.println("입력");
-				} else {
-					System.out.println("이미있음");
-				}
-			} else if (sign == 0 && temp > ssg[i-1][2]) {
-				chk = ssg[i-1][2];
-				System.out.println("실패");
-				count++;
-				sign = 1;
-			}
-		}
-		temp = chk;
-	} while (sign==1);
-	System.out.println(inner_arr.toString());
-	System.out.println(count);
-}*/
 

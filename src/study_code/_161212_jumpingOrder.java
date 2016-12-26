@@ -31,7 +31,6 @@ public class _161212_jumpingOrder {
 			al.put(i, arr[i]);
 		}
 		
-		System.out.println(al.toString());
 		int count = 0;
 		boolean flag = true;
 		do{
@@ -47,7 +46,7 @@ public class _161212_jumpingOrder {
 				}
 			}
 			
-			System.out.println(al.toString());
+			System.out.println("남은것 : " + al.toString());
 			count++;
 			if(al.isEmpty()){
 				flag = false;
