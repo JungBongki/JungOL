@@ -15,13 +15,15 @@ public class _Main2861 {
 	public static void main(String[] args){
 		long start = System.currentTimeMillis();
 		Scanner sc = new Scanner(System.in);
+		final int max = 20150523;
+		final int clap = 11194726;  // 1~20150523 내에 박수친 숫자
 		
-		int a = sc.nextInt();
-		int b = sc.nextInt();
+		long a = sc.nextLong();
+		long b = sc.nextLong();
 		
 		sc.close();
 		
-		for(int i=a;i<=b;i++){
+		for(long i=a;i<=b;i++){
 			if(i%3==0){
 				count++;
 			} else {
@@ -29,15 +31,16 @@ public class _Main2861 {
 			}
 		}
 		
-		System.out.println(count % 20150523);
+		
+		System.out.println(count);
 		long end = System.currentTimeMillis();
 
 		System.out.println( "실행 시간 : " + ( end -	 start )/1000.0 ); 
 
 	}
 
-	private static void pandoc(int i) { // 12
-		int j = i % 10;
+	private static void pandoc(long i) { // 12
+		long j = i % 10;
 		if(j == 3 || j == 6 || j == 9){
 			count++;
 		} else if(i>=10) {

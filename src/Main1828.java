@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 
-public class __Main1828 {
+public class Main1828 {
 
 	public static void main(String[] args) {
 		
@@ -31,7 +31,6 @@ public class __Main1828 {
 			arg.setMax_val(cami[i][1]);
 			arr.add(arg);
 		}
-		System.out.println(arr.toString());
 		//System.out.println(arr.toString());
 		Map<Integer, Integer> a1 = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> a2 = new HashMap<Integer, Integer>();
@@ -45,13 +44,15 @@ public class __Main1828 {
 		int ca = 0;
 		boolean flag = true;
 		do {
-			int min = a1.get(ca);
-			int max = a2.get(ca);
+			count++;
+			int min = a1.get(ca); // 이전 시약의 최저
+			int max = a2.get(ca); // 이전 시약의 최고
 			for (int i = 1; i < n; i++) {
 				if(a1.get(i)!=null){
-					int temp = a1.get(i);
-					if (temp >= min && temp <= max) {
-						//min = a1.get(i);
+					if (a1.get(i) >= min && a1.get(i) <= max) { // 전꺼 최저보다 크고 전거 최고보다 낮을때
+						if(max >= a2.get(i)){
+							max = a2.get(i);
+						}
 						a1.remove(i);
 					} else {
 						a1.remove(ca);
@@ -61,11 +62,10 @@ public class __Main1828 {
 				}
 			}
 			
-			System.out.println("남은것 : " + a1.toString());
+			//System.out.println("남은것 : " + a1.toString());
 			if (a1.isEmpty()) {
 				flag = false;
 			}
-			count++;
 		} while (flag);
 		System.out.println(count);
 	}
