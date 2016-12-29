@@ -15,9 +15,10 @@ public class _Main2861 {
 	public static void main(String[] args){
 		long start = System.currentTimeMillis();
 		Scanner sc = new Scanner(System.in);
+		/*
 		final int max = 20150523;
 		final int clap = 11194726;  // 1~20150523 내에 박수친 숫자
-		
+		*/
 		long a = sc.nextLong();
 		long b = sc.nextLong();
 		
