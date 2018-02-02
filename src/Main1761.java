@@ -17,26 +17,7 @@ public class Main1761 {
 		
 		sc.close();
 		
-		fn_equal();
-		fn_strike_chk();
-		fn_ball_chk();
-		for(int i=111; i<=999; i++){
-			
-		}
+
 	}
 
-	private static void fn_ball_chk() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void fn_strike_chk() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void fn_equal() {
-		// TODO Auto-generated method stub
-		
-	}
 }
